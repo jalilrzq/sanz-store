@@ -20,7 +20,10 @@
 </head>
 <body>
   <!-- Header -->
-  <?php include 'component/header.php' ?>
+  <?php 
+    include 'component/header.php';
+    include 'koneksi.php';
+  ?>
 
   <!-- Home -->
   <?php  include 'pages/home.php' ?>

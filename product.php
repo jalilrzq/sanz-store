@@ -20,7 +20,10 @@
 </head>
 <body>
   <!-- Header -->
-  <?php include 'component/header.php' ?>
+  <?php
+    include 'component/header.php';
+    include 'koneksi.php';
+  ?>
 
   <section id="product" class="product">
     <div class="container">
@@ -30,96 +33,24 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
+        <?php
+          $result = mysqli_query($koneksi, "SELECT * FROM produk WHERE JENIS_PRODUK != 1");
+          foreach ($result as $row) { 
+        ?>
+          <div class="col-lg-4 item mt-4">
+            <div class="card p-4 py-5 mt-2">
+              <img src="<?php echo $row['IMAGE_LINK'] ?>" class="rounded" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Jam Dinding <?php echo $row['NAMA_PRODUK'] ?></h5>
+                <p class="card-text mt-3 desc text-center"><?php echo $row['DESC_PRODUK'] ?></p>
+                <center><a href="detail.php?id=<?php echo $row['ID_PRODUK'] ?>" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a></center>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 item mt-4">
-          <div class="card p-4 py-5 mt-2">
-            <img src="assets/image/product/bts/bts-1.png" class="rounded" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Air Insulated Switchgear</h5>
-              <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-              <a href="#" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a>
-            </div>
-          </div>
-        </div>
+        <?php
+          }
+        ?>
+        
       </div>
     </div>
   </section>

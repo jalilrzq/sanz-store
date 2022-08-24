@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end align-item-lg-center" id="navbarNavAltMarkup">
         <div class="navbar-nav me-5" id="navbar-spy">
           <a class="nav-link me-4 active" href="index.php">Home</a>
-          <a class="nav-link me-4" href="#">Custom</a>
+          <a class="nav-link me-4" href="product-custom.php">Custom</a>
           <a class="nav-link me-4" href="product.php">Produk</a>
           <a class="nav-link me-4" href="#">Outlet Resmi</a>
           <a class="nav-link" href="contact.php">Kontak</a>

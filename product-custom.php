@@ -20,29 +20,37 @@
 </head>
 <body>
   <!-- Header -->
-  <?php 
+  <?php
     include 'component/header.php';
     include 'koneksi.php';
-    $ID = $_GET['id'];
-    $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE ID_PRODUK = '$ID'");
-    $result = mysqli_fetch_array($query);
   ?>
 
-  <section id="detail" class="detail py-5">
-    <div class="container text-white">
-      <div class="row mt-5">
-        <div class="col-lg-6 text-center">
-          <img src="<?php echo $result['IMAGE_LINK']; ?>" width="300" class="img-fluid rounded-3" alt="">
+  <section id="product" class="product">
+    <div class="container">
+      <div class="row text-white">
+        <div class="col">
+          <h1 class="heading">PILIH DESAIN JAM</h1>
         </div>
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <h3>Jam Dinding <?php echo $result['NAMA_PRODUK']; ?></h3>
-          <h5>Stock: In Stock</h5>
-          <p class="mt-3">Ukuran 20X30 Harga Rp 45.000, -</p>
-          <p>Ukuran 30X40 Harga Rp 75.000, -</p>
-          
-          <p class="mt-4"><?php echo $result['DESC_PRODUK']; ?></p>
-          <a href="order.php?id=<?php echo $result['ID_PRODUK']; ?>" class="btn text-light">BELI</a>
-        </div>
+      </div>
+      <div class="row">
+        <?php
+          $result = mysqli_query($koneksi, "SELECT * FROM produk WHERE JENIS_PRODUK = 1");
+          foreach ($result as $row) { 
+        ?>
+          <div class="col-lg-4 item mt-4">
+            <div class="card p-4 py-5 mt-2">
+              <img src="<?php echo $row['IMAGE_LINK'] ?>" class="rounded" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center">Jam Dinding <?php echo $row['NAMA_PRODUK'] ?></h5>
+                <p class="card-text mt-3 desc text-center"><?php echo $row['DESC_PRODUK'] ?></p>
+                <center><a href="detail-custom.php?id=<?php echo $row['ID_PRODUK'] ?>" class="btn" style="border: 1px solid white;">LIHAT DETAIL</a></center>
+              </div>
+            </div>
+          </div>
+        <?php
+          }
+        ?>
+        
       </div>
     </div>
   </section>

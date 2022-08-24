@@ -37,11 +37,11 @@
         <div class="col-lg-6 mt-4 mt-lg-0">
           <h3>Jam Dinding <?php echo $result['NAMA_PRODUK']; ?></h3>
           <h5>Stock: In Stock</h5>
-          <p class="mt-3">Ukuran 20X30 Harga Rp 45.000, -</p>
-          <p>Ukuran 30X40 Harga Rp 75.000, -</p>
+          <p class="mt-3">Ukuran 20X30 Harga Rp 52.000, -</p>
+          <p>Ukuran 30X40 Harga Rp 104.000, -</p>
           
           <p class="mt-4"><?php echo $result['DESC_PRODUK']; ?></p>
-          <a href="order.php?id=<?php echo $result['ID_PRODUK']; ?>" class="btn text-light">BELI</a>
+          <a href="order-custom.php?id=<?php echo $result['ID_PRODUK']; ?>" class="btn text-light">BELI</a>
         </div>
       </div>
     </div>

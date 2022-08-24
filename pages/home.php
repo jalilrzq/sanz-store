@@ -37,47 +37,21 @@
         <!-- Swiper -->
         <div class="swiper mySwiperNew py-5">
           <div class="swiper-wrapper text-center">
+            <?php
+              $result = mysqli_query($koneksi, "SELECT * FROM produk WHERE JENIS_PRODUK = 1");
+              foreach ($result as $row) { 
+            ?>
             <div class="swiper-slide card p-4" style="width: 18rem;">
-              <img src="assets/image/product/custom/custom-1.png" class="rounded" alt="...">
+              <img src="<?php echo $row['IMAGE_LINK'] ?>" class="rounded" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Air Insulated Switchgear</h5>
-                <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
+                <h5 class="card-title"><?php echo $row['NAMA_PRODUK'] ?></h5>
+                <p class="card-text"><?php echo $row['DESC_PRODUK'] ?></p>
                 <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
               </div>
             </div>
-            <div class="swiper-slide card p-4" style="width: 18rem;">
-              <img src="assets/image/product/custom/custom-2.png" class="rounded" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Air Insulated Switchgear</h5>
-                <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-                <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
-              </div>
-            </div>
-            <div class="swiper-slide card p-4" style="width: 18rem;">
-              <img src="assets/image/product/custom/custom-3.png" class="rounded" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Air Insulated Switchgear</h5>
-                <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-                <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
-              </div>
-            </div>
-            <div class="swiper-slide card p-4" style="width: 18rem;">
-              <img src="assets/image/product/custom/custom-4.png" class="rounded" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Air Insulated Switchgear</h5>
-                <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-                <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
-              </div>
-            </div>
-            <div class="swiper-slide card p-4" style="width: 18rem;">
-              <img src="assets/image/product/custom/custom-5.png" class="rounded" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Air Insulated Switchgear</h5>
-                <p class="card-text">Ante mus blandit sapien sociosqu per consequat ad. </p>
-                <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
-              </div>
-            </div>
-
+            <?php
+              }            
+            ?>
           </div>
           <div class="swiper-pagination"></div>
         </div>
