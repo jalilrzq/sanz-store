@@ -130,3 +130,25 @@ body{
 .product .desc{
   font-size: 0.8em;
 }
+
+
+/* Login */
+/* product */
+.login{
+  background-color: #111010;
+  padding-top: 50px;
+  margin-bottom: -100px;
+}
+.login .container{
+  margin-top: 55px;
+  padding-bottom: 10rem;
+}
+.login .card{
+  background-color: #313131;
+  color: white;
+  border-radius: 30px;
+  margin: auto!important;
+}
+.login a{
+  color: white;
+}

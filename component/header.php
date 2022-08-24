@@ -11,7 +11,24 @@
           <a class="nav-link me-4" href="product-custom.php">Custom</a>
           <a class="nav-link me-4" href="product.php">Produk</a>
           <a class="nav-link me-4" href="#">Outlet Resmi</a>
-          <a class="nav-link" href="contact.php">Kontak</a>
+          <a class="nav-link me-4" href="contact.php">Kontak</a>
+          
+          <?php
+            if (isset($_SESSION['username'])){
+              ?>
+              <a class="nav-link" href="logout.php">
+                <i class='bx bx-log-out'></i> Logout
+              </a>
+              <?php
+            } else {
+              ?>
+              <a class="nav-link" href="login.php">
+                <i class='bx bx-log-in'></i> Login
+              </a>
+              <?php
+            }
+          ?>
+
         </div>
         <!-- <div class="icons-home mt-4 mt-lg-0">
           <a href="#"><i class='bx bxs-user'></i></a>

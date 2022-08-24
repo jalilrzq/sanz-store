@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Agu 2022 pada 23.58
+-- Waktu pembuatan: 25 Agu 2022 pada 00.57
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -95,6 +95,13 @@ CREATE TABLE `user` (
   `USERNAME` varchar(50) NOT NULL,
   `PASSWORD` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`ID_USER`, `USERNAME`, `PASSWORD`) VALUES
+(1, 'sanzstore', 2022);
 
 --
 -- Indexes for dumped tables
