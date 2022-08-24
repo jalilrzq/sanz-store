@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +32,7 @@
     <div class="container">
       <div class="row text-white">
         <div class="col">
-          <h1 class="heading">PILIH DESAIN JAM</h1>
+          <h1 class="heading">JAM DINDING</h1>
         </div>
       </div>
       <div class="row">
