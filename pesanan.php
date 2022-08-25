@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
     <div class="container">
       <div class="row text-white">
         <div class="col">
-          <h1 class="heading text-center">WELCOME ADMIN <?php echo strtoupper($_SESSION['username'])?></h1>
+          <h1 class="heading text-center">PESANAN JAM DINDING NON CUSTOM</h1>
         </div>
       </div>
       <div class="row">
@@ -44,17 +44,20 @@ if (!isset($_SESSION['username'])) {
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">ID Produk</th>
+                <th scope="col">ID Order</th>
                 <th scope="col">Nama Produk</th>
                 <th scope="col">Jenis Produk</th>
-                <th scope="col">Image</th>
+                <th scope="col">Nama Pemesan</th>
+                <th scope="col">Ukuran</th>
+                <th scope="col">Harga</th>
+                <th scope="col">Status</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
             <tbody>
               <?php
                 $no = 1;
-                $result = mysqli_query($koneksi, "SELECT * FROM produk");
+                $result = mysqli_query($koneksi, "SELECT * FROM order_non as a, produk as b");
                 foreach ($result as $row) { 
               ?>
               <tr>
@@ -82,16 +85,19 @@ if (!isset($_SESSION['username'])) {
                 ?>
                 <td align=left valign=middle><?php echo $jenis ?></td>
                 <td align=left valign=middle>
-                  <img src="<?php echo $row['IMAGE_LINK'] ?>" class="card-img-top" style="width:50px">
+                  Satria Wahyu
                 </td>
                 <td align=left valign=middle>
-                  <!-- <a href="edit-rute.php?id=<?php // echo $row['ID_PRODUK'] ?>"> -->
-                  <a href="#">
-                    <i class='bx bxs-edit'></i>
-                  </a>
-                  <a href="delete.php?id=<?php echo $row['ID_PRODUK'] ?>" onclick="return confirm('Yakin ingin menghapus data?')">
-                    <i class='bx bxs-trash'></i>
-                  </a>
+                  20X30 CM
+                </td>
+                <td align=left valign=middle>
+                  Rp 45.000,-
+                </td>
+                <td align=left valign=middle>
+                  Belum di Bayar
+                </td>
+                <td align=left valign=middle>
+                  <button>Verifikasi</button>
                 </td>
               </tr>
               <?php

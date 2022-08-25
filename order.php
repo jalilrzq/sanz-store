@@ -38,7 +38,7 @@
           <h1 class="heading text-center">Silahkan isi Form Pemesanan</h1>
         </div>
       </div>
-      <form class="mt-5" id="order">
+      <form class="mt-5" id="order" method="POST" action="proses-order.php">
         <div class="row mb-3">
           <label for="nama-pelanggan" class="col-sm-2 col-form-label">Nama Pelanggan</label>
           <div class="col-sm-10">
