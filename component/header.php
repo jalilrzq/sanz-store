@@ -16,6 +16,9 @@
           <?php
             if (isset($_SESSION['username'])){
               ?>
+              <a class="nav-link" href="pesanan.php">
+                Pesanan
+              </a>
               <a class="nav-link" href="logout.php">
                 <i class='bx bx-log-out'></i> Logout
               </a>
