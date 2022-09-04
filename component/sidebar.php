@@ -17,7 +17,7 @@
           <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
           Order Custom
         </a>
-        <a class="nav-link" href="data-product.php">
+        <a class="nav-link" href="data-order.php">
           <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
           Order Product
         </a>
