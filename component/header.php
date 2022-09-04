@@ -9,9 +9,9 @@
         <div class="navbar-nav me-5" id="navbar-spy">
           <a class="nav-link me-4 active" href="index.php">Home</a>
           <a class="nav-link me-4" href="product-custom.php">Custom</a>
-          <a class="nav-link me-4" href="product.php">Produk</a>
-          <a class="nav-link me-4" href="#">Outlet Resmi</a>
-          <a class="nav-link me-4" href="contact.php">Kontak</a>
+          <a class="nav-link me-4" href="product.php">Product</a>
+          <a class="nav-link me-4" href="outlet-location.php">Official Store</a>
+          <a class="nav-link me-4" href="contact.php">Contact Us</a>
           
           <?php
             if (isset($_SESSION['username'])){

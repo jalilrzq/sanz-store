@@ -7,10 +7,12 @@ if (!isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanz Store</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Dashboard - Admin</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -21,101 +23,78 @@ if (!isset($_SESSION['username'])) {
   <!-- Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
+  <!-- Style Dashboard -->
+  <link href="assets/custom/style-dashboard.css" rel="stylesheet" />
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/custom/style.css">
+
 </head>
-<body>
-  <!-- Header -->
+<body class="sb-nav-fixed">
+  <!-- Navbar Admin -->
   <?php
-    include 'component/header.php';
+    include 'component/navbar-dashboard.php';
     include 'koneksi.php';
   ?>
 
-  <section id="login" class="login">
-    <div class="container">
-      <div class="row text-white">
-        <div class="col">
-          <h1 class="heading text-center">WELCOME ADMIN <?php echo strtoupper($_SESSION['username'])?></h1>
+  <div id="layoutSidenav">
+    <?php include 'component/sidebar.php' ?>
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Data Product</h1>
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">Primary Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">Warning Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body">Success Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">Danger Card</div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col  item mx-auto mt-4">
-          <table class="table text-light table-dark table-striped table-hover">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">ID Produk</th>
-                <th scope="col">Nama Produk</th>
-                <th scope="col">Jenis Produk</th>
-                <th scope="col">Image</th>
-                <th scope="col">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-                $no = 1;
-                $result = mysqli_query($koneksi, "SELECT * FROM produk");
-                foreach ($result as $row) { 
-              ?>
-              <tr>
-                <th align=left valign=middle scope="row"><?php echo $no?></th>
-                <td align=left valign=middle><?php echo $row['ID_PRODUK'] ?></td>
-                <td align=left valign=middle>Jam Dinding <?php echo $row['NAMA_PRODUK'] ?></td>
-                <?php
-                  $id_jenis = $row['JENIS_PRODUK'];
-                  switch ($id_jenis) {
-                    case 1:
-                      $jenis = "CUSTOM";
-                      break;
-                    case 2:
-                      $jenis = "BTS";
-                      break;
-                    case 3:
-                      $jenis = "NCT";
-                      break;
-                    case 4:
-                      $jenis = "BlackPink";
-                      break;
-                    default:
-                      $jenis = "Undefined";
-                  }
-                ?>
-                <td align=left valign=middle><?php echo $jenis ?></td>
-                <td align=left valign=middle>
-                  <img src="<?php echo $row['IMAGE_LINK'] ?>" class="card-img-top" style="width:50px">
-                </td>
-                <td align=left valign=middle>
-                  <!-- <a href="edit-rute.php?id=<?php // echo $row['ID_PRODUK'] ?>"> -->
-                  <a href="#">
-                    <i class='bx bxs-edit'></i>
-                  </a>
-                  <a href="delete.php?id=<?php echo $row['ID_PRODUK'] ?>" onclick="return confirm('Yakin ingin menghapus data?')">
-                    <i class='bx bxs-trash'></i>
-                  </a>
-                </td>
-              </tr>
-              <?php
-                $no++;
-                }
-              ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      </main>
+      
+      <?php include 'component/footer-dashboard.php' ?>
     </div>
-  </section>
+  </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Footer -->
-  <?php include 'component/footer.php' ?>
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
 
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Bootstrap JS -->
-  <script src="assets/js/bootstrap.min.js"></script>
-
-  <!-- Custom JS -->
-  <script src="assets/custom/custom.js"></script>
-
+    <!-- Custom JS -->
+    <script src="assets/custom/custom.js"></script>
 </body>
 </html>

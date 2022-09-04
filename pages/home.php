@@ -45,7 +45,7 @@
               <img src="<?php echo $row['IMAGE_LINK'] ?>" class="rounded" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $row['NAMA_PRODUK'] ?></h5>
-                <p class="card-text"><?php echo $row['DESC_PRODUK'] ?></p>
+                <!-- <p class="card-text"><?php // echo $row['DESC_PRODUK'] ?></p> -->
                 <a href="#" class="btn" style="border: 1px solid black;">LIHAT DETAIL</a>
               </div>
             </div>
