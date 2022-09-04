@@ -60,8 +60,7 @@ if (!isset($_SESSION['username'])) {
             <tbody>
               <?php
                 $no = 1;
-                // $result = mysqli_query($koneksi, "SELECT * FROM order_non as a, produk as b");
-                $result = mysqli_query($koneksi, "SELECT * FROM order_non LEFT JOIN produk ON order_non.ID_PRODUK = produk.ID_PRODUK");
+                $result = mysqli_query($koneksi, "SELECT * FROM order_regular LEFT JOIN produk ON order_regular.ID_PRODUK = produk.ID_PRODUK");
                 foreach ($result as $row) { 
               ?>
               <tr>
@@ -99,6 +98,7 @@ if (!isset($_SESSION['username'])) {
                 </td>
                 <td align=left valign=middle>
                   <button class="bg-danger" >Belum</button>
+                  <input type="button" value="Open Curtain" id="myButton1"></input>
                 </td>
               </tr>
               <?php
@@ -109,6 +109,7 @@ if (!isset($_SESSION['username'])) {
           </table>
         </div>
       </main>
+
       
       <?php include 'component/footer-dashboard.php' ?>
     </div>

@@ -43,14 +43,13 @@ if (!isset($_SESSION['username'])) {
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Regular Order Product</h1>
+          <h1 class="mt-4">Custom Order Product</h1>
           <table class="table table-striped table-hover">
             <thead>
               <tr>
                 <th scope="col">No</th>
                 <th scope="col">ID Order</th>
                 <th scope="col">Nama Produk</th>
-                <th scope="col">Jenis Produk</th>
                 <th scope="col">Nama Pemesan</th>
                 <th scope="col">Ukuran</th>
                 <th scope="col">Harga</th>
@@ -60,45 +59,24 @@ if (!isset($_SESSION['username'])) {
             <tbody>
               <?php
                 $no = 1;
-                // $result = mysqli_query($koneksi, "SELECT * FROM order_non as a, produk as b");
-                $result = mysqli_query($koneksi, "SELECT * FROM order_non LEFT JOIN produk ON order_non.ID_PRODUK = produk.ID_PRODUK");
+                $result = mysqli_query($koneksi, "SELECT * FROM order_custom LEFT JOIN produk ON order_custom.ID_PRODUK = produk.ID_PRODUK");
                 foreach ($result as $row) { 
               ?>
               <tr>
                 <th align=left valign=middle scope="row"><?php echo $no?></th>
                 <td align=left valign=middle><?php echo $row['ID_ORDER'] ?></td>
                 <td align=left valign=middle>Jam Dinding <?php echo $row['NAMA_PRODUK'] ?></td>
-                <?php
-                  $id_jenis = $row['JENIS_PRODUK'];
-                  switch ($id_jenis) {
-                    case 1:
-                      $jenis = "CUSTOM";
-                      break;
-                    case 2:
-                      $jenis = "BTS";
-                      break;
-                    case 3:
-                      $jenis = "NCT";
-                      break;
-                    case 4:
-                      $jenis = "BlackPink";
-                      break;
-                    default:
-                      $jenis = "Undefined";
-                  }
-                ?>
-                <td align=left valign=middle><?php echo $jenis ?></td>
                 <td align=left valign=middle>
-                  Satria Wahyu
+                  <?php echo $row['NAMA_PELANGGAN'] ?>
                 </td>
                 <td align=left valign=middle>
-                  20X30 CM
+                  <?php echo $row['UKURAN'] ?> CM
                 </td>
                 <td align=left valign=middle>
-                  Rp 45.000,-
+                  <?php echo $row['HARGA'] ?>
                 </td>
                 <td align=left valign=middle>
-                  <button>Belum</button>
+                  <button class="bg-danger" >Belum</button>
                 </td>
               </tr>
               <?php

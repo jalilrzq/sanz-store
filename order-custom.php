@@ -38,7 +38,7 @@
           <h1 class="heading text-center">Silahkan isi Form Pemesanan</h1>
         </div>
       </div>
-      <form class="mt-5" id="order">
+      <form class="mt-5" id="order" method="POST" action="proses-order-custom.php">
         <div class="row mb-3">
           <label for="nama-pelanggan" class="col-sm-2 col-form-label">Nama Pelanggan</label>
           <div class="col-sm-10">
@@ -127,9 +127,9 @@
           <div class="form-text col-sm-10">contoh: Siapa yang bersungguh-sungguh maka dia akan berhasil </div>
         </div>
         <div class="row mb-3">
-          <label for="from" class="col-sm-2 col-form-label">From</label>
+          <label for="from-name" class="col-sm-2 col-form-label">From</label>
           <div class="col-sm-10">
-            <input type="text-area" class="form-control" id="from" name="from">
+            <input type="text-area" class="form-control" id="from-name" name="from-name">
           </div>
           <label class="col-sm-2 col-form-label"></label>
           <div class="form-text col-sm-10">contoh: Angga </div>

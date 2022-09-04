@@ -53,3 +53,17 @@ window.addEventListener('DOMContentLoaded', event => {
       new simpleDatatables.DataTable(datatablesSimple);
   }
 });
+
+
+
+$('#myButton1').click(function() {
+  var self = this;
+  change(self);
+});
+
+function change( el ) {
+ if ( el.value === "Open Curtain" )
+ el.value = "Close Curtain";
+ else
+ el.value = "Open Curtain";
+}

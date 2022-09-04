@@ -39,11 +39,14 @@ if (!isset($_SESSION['username'])) {
     $query_products = mysqli_query($koneksi, "SELECT * FROM produk");
     $num_products = mysqli_num_rows($query_products);
     
-    $query_regular = mysqli_query($koneksi, "SELECT * FROM order_non");
+    $query_custom = mysqli_query($koneksi, "SELECT * FROM order_custom");
+    $num_custom = mysqli_num_rows($query_custom);
+    
+    $query_regular = mysqli_query($koneksi, "SELECT * FROM order_regular");
     $num_regular = mysqli_num_rows($query_regular);
 
     $total_products = $num_products;
-    $order_custom = 0;
+    $order_custom = $num_custom;
     $order_regular = $num_regular;
 
   ?>
@@ -73,7 +76,7 @@ if (!isset($_SESSION['username'])) {
               <div class="card bg-success text-white mb-4">
                 <div class="card-body">
                   <h5 class="card-title">Custom Order Products</h5>
-                  <p style="font-size: 2rem; margin-bottom: 0px;"><?php echo $order_regular ?></P>
+                  <p style="font-size: 2rem; margin-bottom: 0px;"><?php echo $order_custom ?></P>
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                   <a class="small text-white stretched-link" href="#">View Details</a>

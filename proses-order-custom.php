@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php';
 
-$query = mysqli_query($koneksi, "SELECT max(ID_ORDER) as kodeTerbesar FROM order_regular");
+$query = mysqli_query($koneksi, "SELECT max(ID_ORDER) as kodeTerbesar FROM order_custom");
 $data = mysqli_fetch_array($query);
 $kodeBarang = $data['kodeTerbesar'];
  
@@ -16,7 +16,7 @@ $urutan++;
 // perintah sprintf("%03s", $urutan); berguna untuk membuat string menjadi 3 karakter
 // misalnya perintah sprintf("%03s", 15); maka akan menghasilkan '015'
 // angka yang diambil tadi digabungkan dengan kode huruf yang kita inginkan, misalnya BRG 
-$huruf = "OR";
+$huruf = "OC";
 $kodeBarang = $huruf . sprintf("%03s", $urutan);
 // echo $kodeBarang;
 
@@ -31,10 +31,15 @@ $nama_produk = $_POST['nama-produk'];
 $ukuran = $_POST['ukuran'];
 $harga = $_POST['harga-produk'];
 $status_pembayaran = 0;
+$ucapan = $_POST['ucapan'];
+$nama_custom = $_POST['nama-custom'];
+$quote = $_POST['quote'];
+$from_name = $_POST['from-name'];
+$image_custom = $_POST['formFile'];
 
 // Update ke database
 
-$sql = "INSERT INTO `order_regular`(`ID_ORDER`, `NAMA_PELANGGAN`, `NO_HP`, `ALAMAT`, `TANGGAL_PEMBELIAN`, `ID_PRODUK`, `UKURAN`, `HARGA`, `STATUS_PEMBAYARAN`) VALUES ('$id_order', '$nama_pelanggan', '$no_hp', '$alamat', '$tanggal_pembelian', '$id_produk', '$ukuran', '$harga', '$status_pembayaran')";
+$sql = "INSERT INTO `order_custom`(`ID_ORDER`, `NAMA_PELANGGAN`, `NO_HP`, `ALAMAT`, `TANGGAL_PEMBELIAN`, `ID_PRODUK`, `UKURAN`, `HARGA`, `STATUS_PEMBAYARAN`, `UCAPAN`, `NAMA_CUSTOM`, `QUOTE`, `FROM_NAME`, `IMAGE`) VALUES ('$id_order', '$nama_pelanggan', '$no_hp', '$alamat', '$tanggal_pembelian', '$id_produk', '$ukuran', '$harga', '$status_pembayaran', '$ucapan', '$nama_custom', '$quote', '$from_name', '$image_custom')";
 mysqli_query($koneksi, $sql);
 
 // Balik ke halaman product
