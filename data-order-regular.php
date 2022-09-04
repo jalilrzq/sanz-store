@@ -98,7 +98,7 @@ if (!isset($_SESSION['username'])) {
                 </td>
                 <td align=left valign=middle>
                   <button class="bg-danger" >Belum</button>
-                  <input type="button" value="Open Curtain" id="myButton1"></input>
+                  <!-- <input type="button" value="Open Curtain" id="myButton1"></input> -->
                 </td>
               </tr>
               <?php
