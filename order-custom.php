@@ -91,6 +91,52 @@
             <input type="text-area" class="form-control" id="harga-produk" name="harga-produk" readonly>
           </div>
         </div>
+        
+        <label class="col-sm-12 col-form-label text-center">Data Custom</label>
+        <hr class="dropdown-divider mb-3">
+        <div class="row mb-3">
+          <label for="formFile" class="col-sm-2 col-form-label">Foto</label>
+          <div class="col-sm-10">
+          <input class="form-control" type="file" id="formFile" name="formFile">
+          </div>
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-text col-sm-10">Pastikan format gambar "jpg" "png" "jpeg"</div>
+        </div>
+        <div class="row mb-3">
+          <label for="ucapan" class="col-sm-2 col-form-label">Ucapan</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="ucapan" name="ucapan">
+          </div>
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-text col-sm-10">contoh: Happy Graduation!</div>
+        </div>
+        <div class="row mb-3">
+          <label for="nama-custom" class="col-sm-2 col-form-label">Nama Custom</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nama-custom" name="nama-custom">
+          </div>
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-text col-sm-10">contoh: Bunga Tiara S.Kom</div>
+        </div>
+        <div class="row mb-3">
+          <label for="quote" class="col-sm-2 col-form-label">Quote</label>
+          <div class="col-sm-10">
+            <input type="text-area" class="form-control" id="quote" name="quote">
+          </div>
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-text col-sm-10">contoh: Siapa yang bersungguh-sungguh maka dia akan berhasil </div>
+        </div>
+        <div class="row mb-3">
+          <label for="from" class="col-sm-2 col-form-label">From</label>
+          <div class="col-sm-10">
+            <input type="text-area" class="form-control" id="from" name="from">
+          </div>
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-text col-sm-10">contoh: Angga </div>
+        </div>
+
+
+
         <button type="submit" class="btn text-light mt-5">Pesan Sekarang</button>
       </form>
     </div>

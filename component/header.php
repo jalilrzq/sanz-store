@@ -8,35 +8,21 @@
       <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end align-item-lg-center" id="navbarNavAltMarkup">
         <div class="navbar-nav me-5" id="navbar-spy">
           <a class="nav-link me-4 active" href="index.php">Home</a>
-          <a class="nav-link me-4" href="product-custom.php">Custom</a>
-          <a class="nav-link me-4" href="product.php">Product</a>
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="product-custom.php">Custom Products</a></li>
+              <li><a class="dropdown-item" href="product.php">Regular Products</a></li>
+            </ul>
+          </li>
           <a class="nav-link me-4" href="outlet-location.php">Official Store</a>
           <a class="nav-link me-4" href="contact.php">Contact Us</a>
-          
-          <?php
-            if (isset($_SESSION['username'])){
-              ?>
-              <a class="nav-link" href="pesanan.php">
-                Pesanan
-              </a>
-              <a class="nav-link" href="logout.php">
-                <i class='bx bx-log-out'></i> Logout
-              </a>
-              <?php
-            } else {
-              ?>
-              <a class="nav-link" href="login.php">
-                <i class='bx bx-log-in'></i> Login
-              </a>
-              <?php
-            }
-          ?>
-
+          <a class="nav-link" href="login.php">
+            <i class='bx bx-log-in'></i> Login
+          </a>
         </div>
-        <!-- <div class="icons-home mt-4 mt-lg-0">
-          <a href="#"><i class='bx bxs-user'></i></a>
-          <a href="#"><i class='bx bx-shopping-bag ms-3'></i></a>
-        </div> -->
       </div>
     </div>
   </nav>

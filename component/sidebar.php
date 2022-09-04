@@ -13,13 +13,13 @@
         </a>
         
         <div class="sb-sidenav-menu-heading">Feature</div>
-        <a class="nav-link" href="data-product.php">
+        <a class="nav-link" href="data-order-custom.php">
           <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
           Order Custom
         </a>
-        <a class="nav-link" href="data-order.php">
+        <a class="nav-link" href="data-order-regular.php">
           <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-          Order Product
+          Order Regular
         </a>
         
       </div>    

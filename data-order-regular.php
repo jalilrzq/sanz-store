@@ -43,7 +43,7 @@ if (!isset($_SESSION['username'])) {
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h1 class="mt-4">Data Order Product</h1>
+          <h1 class="mt-4">Regular Order Product</h1>
           <table class="table table-striped table-hover">
             <thead>
               <tr>
@@ -60,7 +60,8 @@ if (!isset($_SESSION['username'])) {
             <tbody>
               <?php
                 $no = 1;
-                $result = mysqli_query($koneksi, "SELECT * FROM order_non as a, produk as b");
+                // $result = mysqli_query($koneksi, "SELECT * FROM order_non as a, produk as b");
+                $result = mysqli_query($koneksi, "SELECT * FROM order_non LEFT JOIN produk ON order_non.ID_PRODUK = produk.ID_PRODUK");
                 foreach ($result as $row) { 
               ?>
               <tr>
@@ -88,16 +89,16 @@ if (!isset($_SESSION['username'])) {
                 ?>
                 <td align=left valign=middle><?php echo $jenis ?></td>
                 <td align=left valign=middle>
-                  Satria Wahyu
+                  <?php echo $row['NAMA_PELANGGAN'] ?>
                 </td>
                 <td align=left valign=middle>
-                  20X30 CM
+                  <?php echo $row['UKURAN'] ?> CM
                 </td>
                 <td align=left valign=middle>
-                  Rp 45.000,-
+                  <?php echo $row['HARGA'] ?>
                 </td>
                 <td align=left valign=middle>
-                  <button>Belum</button>
+                  <button class="bg-danger" >Belum</button>
                 </td>
               </tr>
               <?php
