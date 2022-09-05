@@ -134,7 +134,7 @@ mysqli_query($koneksi, $sql);
       <div class="row mt-5">
         <div class="col text-center">
           <p>Jika sudah melakukan transfer pembayaran, silahkan klik tombol konfirmasi di bawah ini</p>
-          <a href="https://wa.me/6281333433994?text=Selamat%20Siang%20Sanz%20Store%2C%20Saya%20<?php echo $nama_pelanggan ?>%20sudah%20melakukan%20pembayaran%20produk%20<?php echo $nama_produk?>%20dengan%20ID%20Order%20<?php echo $id_order ?>.%20Berikut%20saya%20lampirkan%20foto%20bukti%20pembayarannya%3A%0A" class="btn btn-primary">Saya Sudah Transfer</a>
+          <a href="https://wa.me/6285700922984?text=Selamat%20Siang%20Sanz%20Store%2C%20Saya%20<?php echo $nama_pelanggan ?>%20sudah%20melakukan%20pembayaran%20produk%20<?php echo $nama_produk?>%20dengan%20ID%20Order%20<?php echo $id_order ?>.%20Berikut%20saya%20lampirkan%20foto%20bukti%20pembayarannya%3A%0A" class="btn btn-primary">Saya Sudah Transfer</a>
         </div>
       </div>
     </div>
