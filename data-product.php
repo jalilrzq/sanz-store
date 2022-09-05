@@ -44,7 +44,8 @@ if (!isset($_SESSION['username'])) {
       <main>
         <div class="container-fluid px-4">
           <h1 class="mt-4">Data Product</h1>
-          <button type="button" class="btn btn-secondary my-3">Tambah Barang</button>
+          <!-- <button type="button" class="btn btn-secondary my-3">Tambah Barang</button> -->
+          <a class="btn btn-secondary my-3" href="form-tambah-product.php" role="button">Tambah Barang</a>
             <table class="table table-light table-striped table-hover">
               <thead>
                 <tr>
