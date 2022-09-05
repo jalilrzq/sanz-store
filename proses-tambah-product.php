@@ -35,6 +35,6 @@ mysqli_query($koneksi, $sql);
 
 // Balik ke halaman product
 
-// header("location: data-product.php");
+header("location: data-product.php");
 
 ?>
